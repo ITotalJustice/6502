@@ -47,14 +47,7 @@ void MOS6502_debug_post_fetch(struct MOS6502* cpu, void* user, unsigned char opc
     #define REG_X cpu->X
     #define REG_Y cpu->Y
     #define REG_SP cpu->S
-    #define REG_P cpu->status.P
-    #define CARRY cpu->status._.C
-    #define ZERO cpu->status._.Z
-    #define INTERRUPT cpu->status._.I
-    #define DECIMAL cpu->status._.D
-    #define BFLAG cpu->status._.B
-    #define OVERFLOW cpu->status._.V
-    #define NEGATIVE cpu->status._.N
+    #define REG_P cpu->P
 
     #define OOF() \
         fprintf(stderr, "OLD_OP: 0x%02X\n", old_opcode); \
@@ -86,16 +79,15 @@ void MOS6502_debug_post_execute(struct MOS6502* cpu, void* user, unsigned char o
 }
 
 int main(int argc, char **argv) {
-    (void)argc; (void)argv;
-
     struct DummyNes nes = {0};
+
+    UNUSED(argc); UNUSED(argv);
     nes.cpu.userdata = &nes;
     nes.rom = NESTEST_ROM;
 
     nes.cpu.S = 0xFD;
     nes.cpu.PC = 0xC000;
-    nes.cpu.status._.I = 1;
-    nes.cpu.status._.B = 2;
+    nes.cpu.P |= 0x24;
 
     for (cycles = 0; cycles < 8991; cycles++) {
         MOS6502_run(&nes.cpu);

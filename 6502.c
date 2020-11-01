@@ -27,16 +27,23 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
 #define REG_X mos6502->X
 #define REG_Y mos6502->Y
 #define REG_SP mos6502->S
-#define REG_P mos6502->status.P
+#define REG_P mos6502->P
 
 /* status flags */
-#define CARRY mos6502->status._.C
-#define ZERO mos6502->status._.Z
-#define INTERRUPT mos6502->status._.I
-#define DECIMAL mos6502->status._.D
-#define BFLAG mos6502->status._.B
-#define OVERFLOW mos6502->status._.V
-#define NEGATIVE mos6502->status._.N
+#define CARRY (!!(mos6502->P & 0x01))
+#define ZERO (!!(mos6502->P & 0x02))
+#define INTERRUPT (!!(mos6502->P & 0x04))
+#define DECIMAL (!!(mos6502->P & 0x08))
+#define BREAK (!!(mos6502->P & 0x10))
+#define OVERFLOW (!!(mos6502->P & 0x40))
+#define NEGATIVE (!!(mos6502->P & 0x80))
+#define SET_CARRY(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x01
+#define SET_ZERO(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x02
+#define SET_INTERRUPT(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x04
+#define SET_DECIMAL(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x08
+#define SET_BREAK(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x10
+#define SET_OVERFLOW(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x40
+#define SET_NEGATIVE(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x80
 
 /* read / write wrappers */
 #define read8(addr) MOS6502_read(mos6502->userdata, addr)
@@ -82,7 +89,7 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
     oprand +=  REG_Y; \
 } while(0)
 
-#define SET_FLAGS_ZN(z,n) do { ZERO = (z) == 0; NEGATIVE = ((n) & 0x80) == 0x80; } while(0)
+#define SET_FLAGS_ZN(z,n) do { SET_ZERO((z) == 0); SET_NEGATIVE(((n) & 0x80) == 0x80); } while(0)
 
 static unsigned char _pop8(struct MOS6502* mos6502) { return read8(++REG_SP | 0x100); }
 static unsigned short _pop16(struct MOS6502* mos6502) { return (_pop8(mos6502)) | (_pop8(mos6502) << 8); }
@@ -113,13 +120,13 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 #define TOP() /* tripple nop */
 #define STP() /* stops the cpu */
 
-#define CLC() do { CARRY = 0; } while(0)
-#define CLI() do { INTERRUPT = 0; } while(0)
-#define CLV() do { OVERFLOW = 0; } while(0)
-#define CLD() do { DECIMAL = 0; } while(0)
-#define SEC() do { CARRY = 1; } while(0)
-#define SEI() do { INTERRUPT = 1; } while(0)
-#define SED() do { DECIMAL = 1; } while(0)
+#define CLC() do { REG_P &= ~0x01; } while(0)
+#define CLI() do { REG_P &= ~0x04; } while(0)
+#define CLD() do { REG_P &= ~0x08; } while(0)
+#define CLV() do { REG_P &= ~0x40; } while(0)
+#define SEC() do { REG_P |= 0x01; } while(0)
+#define SEI() do { REG_P |= 0x04; } while(0)
+#define SED() do { REG_P |= 0x08; } while(0)
 
 #define BRANCH(cond) do { \
     oprand = read8(oprand); \
@@ -140,7 +147,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 
 #define BIT() do { \
     oprand = read8(oprand); \
-    OVERFLOW = ((oprand & 0x40) == 0x40); \
+    SET_OVERFLOW((oprand & 0x40) == 0x40); \
     SET_FLAGS_ZN((oprand & REG_A), oprand); \
 } while(0)
 
@@ -151,7 +158,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 
 #define COMP(reg) do { \
     oprand = read8(oprand); \
-    CARRY = reg >= oprand; \
+    SET_CARRY(reg >= oprand); \
     oprand = (reg - oprand) & 0xFF; \
     SET_FLAGS_ZN(oprand, oprand); \
 } while(0)
@@ -162,9 +169,9 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 #define ADCSBC() do { \
     const unsigned char old_carry = CARRY; \
     const unsigned char old_a = REG_A; \
-    CARRY = (REG_A + oprand + CARRY) > 0xFF; \
+    SET_CARRY((REG_A + oprand + CARRY) > 0xFF); \
     REG_A += oprand + old_carry; \
-    OVERFLOW = ((old_a ^ REG_A) & (oprand ^ REG_A) & 0x80) > 0; \
+    SET_OVERFLOW(((old_a ^ REG_A) & (oprand ^ REG_A) & 0x80) > 0); \
     SET_FLAGS_ZN(REG_A, REG_A); \
 } while(0)
 #define ADC() do { oprand = read8(oprand); ADCSBC(); } while(0)
@@ -191,7 +198,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 
 #define _ROR(value) do { \
     const unsigned char old_carry = CARRY; \
-    CARRY = value & 1; \
+    SET_CARRY(value & 1); \
     value = (value >> 1) | (old_carry << 7); \
     SET_FLAGS_ZN(value, value); \
 } while(0)
@@ -203,7 +210,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 #define RORA() do { _ROR(REG_A); } while(0)
 
 #define _LSR(value) do { \
-    CARRY = value & 1; \
+    SET_CARRY(value & 1); \
     value >>= 1; \
     SET_FLAGS_ZN(value, 0); \
 } while(0)
@@ -216,7 +223,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 
 #define _ROL(value) do { \
     const unsigned char old_carry = CARRY; \
-    CARRY = (value & 0x80) == 0x80; \
+    SET_CARRY((value & 0x80) == 0x80); \
     value = (value << 1) | old_carry; \
     SET_FLAGS_ZN(value, value); \
 } while(0)
@@ -228,7 +235,7 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 #define ROLA() do { _ROL(REG_A); } while(0)
 
 #define _ASL(value) do { \
-    CARRY = (value & 0x80) == 0x80; \
+    SET_CARRY((value & 0x80) == 0x80); \
     value <<= 1; \
     SET_FLAGS_ZN(value, value); \
 } while(0)
@@ -266,13 +273,13 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502,
 #define RRA() do { ROR(); ADC(); } while(0)
 
 void MOS6502_run(struct MOS6502* mos6502) {
-    mos6502->cycles = 0;
-    register const unsigned char opcode = read8(REG_PC);
     register unsigned short oprand;
+    register const unsigned char opcode = read8(REG_PC);
     #ifdef MOS6502_DEBUG
     MOS6502_debug_post_fetch(mos6502->userdata, mos6502, opcode);
     #endif
     REG_PC++;
+    mos6502->cycles = 0;
 
     switch (opcode) {
         case 0x01: INDX(); ORA();  break;
