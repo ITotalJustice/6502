@@ -1,0 +1,4866 @@
+[
+	{
+		"Name": "BRK",
+		"AddressingMode": 0,
+		"Opcode": 0,
+		"Length": 1,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "1",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Force Break"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 11,
+		"Opcode": 1,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 2,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 11,
+		"Opcode": 3,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 7,
+		"Opcode": 4,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 7,
+		"Opcode": 5,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "ASL",
+		"AddressingMode": 7,
+		"Opcode": 6,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift Left One Bit (Memory or Accumulator)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 7,
+		"Opcode": 7,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "PHP",
+		"AddressingMode": 0,
+		"Opcode": 8,
+		"Length": 1,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Push Processor Status on Stack"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 3,
+		"Opcode": 9,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "ASL",
+		"AddressingMode": 1,
+		"Opcode": 10,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift Left One Bit (Memory or Accumulator)"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 11,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 4,
+		"Opcode": 12,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 4,
+		"Opcode": 13,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "ASL",
+		"AddressingMode": 4,
+		"Opcode": 14,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift Left One Bit (Memory or Accumulator)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 4,
+		"Opcode": 15,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "BPL",
+		"AddressingMode": 2,
+		"Opcode": 16,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Result Plus"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 12,
+		"Opcode": 17,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 18,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 12,
+		"Opcode": 19,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 20,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 8,
+		"Opcode": 21,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "ASL",
+		"AddressingMode": 8,
+		"Opcode": 22,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift Left One Bit (Memory or Accumulator)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 8,
+		"Opcode": 23,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "CLC",
+		"AddressingMode": 0,
+		"Opcode": 24,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "0",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Clear Carry Flag"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 6,
+		"Opcode": 25,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 26,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 6,
+		"Opcode": 27,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 28,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ORA",
+		"AddressingMode": 5,
+		"Opcode": 29,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "OR Memory with Accumulator"
+	},
+	{
+		"Name": "ASL",
+		"AddressingMode": 5,
+		"Opcode": 30,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift Left One Bit (Memory or Accumulator)"
+	},
+	{
+		"Name": "SLO",
+		"AddressingMode": 5,
+		"Opcode": 31,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift left memory then OR A register with result"
+	},
+	{
+		"Name": "JSR",
+		"AddressingMode": 4,
+		"Opcode": 32,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Jump to New Location Saving Return Address"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 11,
+		"Opcode": 33,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 34,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 11,
+		"Opcode": 35,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "BIT",
+		"AddressingMode": 7,
+		"Opcode": 36,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Test Bits in Memory with Accumulator"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 7,
+		"Opcode": 37,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "ROL",
+		"AddressingMode": 7,
+		"Opcode": 38,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Left (Memory or Accumulator)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 7,
+		"Opcode": 39,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "PLP",
+		"AddressingMode": 0,
+		"Opcode": 40,
+		"Length": 1,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "I",
+			"D": "D",
+			"V": "V"
+		},
+		"Summary": "Pull Processor Status from Stack"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 3,
+		"Opcode": 41,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "ROL",
+		"AddressingMode": 1,
+		"Opcode": 42,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Left (Memory or Accumulator)"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 43,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "BIT",
+		"AddressingMode": 4,
+		"Opcode": 44,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Test Bits in Memory with Accumulator"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 4,
+		"Opcode": 45,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "ROL",
+		"AddressingMode": 4,
+		"Opcode": 46,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Left (Memory or Accumulator)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 4,
+		"Opcode": 47,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "BMI",
+		"AddressingMode": 2,
+		"Opcode": 48,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Result Minus"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 12,
+		"Opcode": 49,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 50,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 12,
+		"Opcode": 51,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 52,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 8,
+		"Opcode": 53,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "ROL",
+		"AddressingMode": 8,
+		"Opcode": 54,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Left (Memory or Accumulator)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 8,
+		"Opcode": 55,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "SEC",
+		"AddressingMode": 0,
+		"Opcode": 56,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "1",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Set Carry Flag"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 6,
+		"Opcode": 57,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 58,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 6,
+		"Opcode": 59,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 60,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "AND",
+		"AddressingMode": 5,
+		"Opcode": 61,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND Memory with Accumulator"
+	},
+	{
+		"Name": "ROL",
+		"AddressingMode": 5,
+		"Opcode": 62,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Left (Memory or Accumulator)"
+	},
+	{
+		"Name": "RLA",
+		"AddressingMode": 5,
+		"Opcode": 63,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate memory left then AND A register with result"
+	},
+	{
+		"Name": "RTI",
+		"AddressingMode": 0,
+		"Opcode": 64,
+		"Length": 1,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "I",
+			"D": "D",
+			"V": "V"
+		},
+		"Summary": "Return from Interrupt"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 11,
+		"Opcode": 65,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 66,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 11,
+		"Opcode": 67,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 7,
+		"Opcode": 68,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 7,
+		"Opcode": 69,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "LSR",
+		"AddressingMode": 7,
+		"Opcode": 70,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "0",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 7,
+		"Opcode": 71,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "PHA",
+		"AddressingMode": 0,
+		"Opcode": 72,
+		"Length": 1,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Push Accumulator on Stack"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 3,
+		"Opcode": 73,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "LSR",
+		"AddressingMode": 1,
+		"Opcode": 74,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "0",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 75,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "JMP",
+		"AddressingMode": 4,
+		"Opcode": 76,
+		"Length": 3,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Jump to New Location"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 4,
+		"Opcode": 77,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "LSR",
+		"AddressingMode": 4,
+		"Opcode": 78,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "0",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 4,
+		"Opcode": 79,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "BVC",
+		"AddressingMode": 2,
+		"Opcode": 80,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Overflow Clear"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 12,
+		"Opcode": 81,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 82,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 12,
+		"Opcode": 67,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 84,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 8,
+		"Opcode": 85,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "LSR",
+		"AddressingMode": 8,
+		"Opcode": 86,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "0",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 8,
+		"Opcode": 87,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 88,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 6,
+		"Opcode": 89,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 90,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 6,
+		"Opcode": 91,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 92,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "EOR",
+		"AddressingMode": 5,
+		"Opcode": 93,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Exclusive-OR Memory with Accumulator"
+	},
+	{
+		"Name": "LSR",
+		"AddressingMode": 5,
+		"Opcode": 94,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "0",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "SRE",
+		"AddressingMode": 5,
+		"Opcode": 95,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Shift right memory then EOR A register with result"
+	},
+	{
+		"Name": "RTS",
+		"AddressingMode": 0,
+		"Opcode": 96,
+		"Length": 1,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Return from Subroutine"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 11,
+		"Opcode": 97,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 98,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 11,
+		"Opcode": 99,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 7,
+		"Opcode": 100,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 7,
+		"Opcode": 101,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "ROR",
+		"AddressingMode": 7,
+		"Opcode": 102,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 7,
+		"Opcode": 103,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "PLA",
+		"AddressingMode": 0,
+		"Opcode": 104,
+		"Length": 1,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Pull Accumulator from Stack"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 3,
+		"Opcode": 105,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "ROR",
+		"AddressingMode": 1,
+		"Opcode": 106,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 107,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "JMP",
+		"AddressingMode": 10,
+		"Opcode": 108,
+		"Length": 3,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Jump to New Location"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 4,
+		"Opcode": 109,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "ROR",
+		"AddressingMode": 4,
+		"Opcode": 110,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 4,
+		"Opcode": 111,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "BVS",
+		"AddressingMode": 2,
+		"Opcode": 112,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Overflow Set"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 12,
+		"Opcode": 113,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 114,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 12,
+		"Opcode": 115,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 116,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 8,
+		"Opcode": 117,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "ROR",
+		"AddressingMode": 8,
+		"Opcode": 118,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 7,
+		"Opcode": 119,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "SEI",
+		"AddressingMode": 0,
+		"Opcode": 120,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "1",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Set Interrupt Disable Status"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 6,
+		"Opcode": 121,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 122,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 6,
+		"Opcode": 123,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 124,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ADC",
+		"AddressingMode": 5,
+		"Opcode": 125,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Add Memory to Accumulator with Carry"
+	},
+	{
+		"Name": "ROR",
+		"AddressingMode": 5,
+		"Opcode": 126,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Rotate One Bit Right (Memory or Accumulator)"
+	},
+	{
+		"Name": "RRA",
+		"AddressingMode": 5,
+		"Opcode": 127,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Rotate memory right then ADC A register with result"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 3,
+		"Opcode": 128,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 11,
+		"Opcode": 129,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 3,
+		"Opcode": 130,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SAX",
+		"AddressingMode": 11,
+		"Opcode": 131,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND X register with accumulator and store result in memory"
+	},
+	{
+		"Name": "STY",
+		"AddressingMode": 7,
+		"Opcode": 132,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index Y in Memory"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 7,
+		"Opcode": 133,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "STX",
+		"AddressingMode": 7,
+		"Opcode": 134,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index X in Memory"
+	},
+	{
+		"Name": "SAX",
+		"AddressingMode": 7,
+		"Opcode": 135,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND X register with accumulator and store result in memory"
+	},
+	{
+		"Name": "DEY",
+		"AddressingMode": 0,
+		"Opcode": 136,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Index Y by One"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 3,
+		"Opcode": 137,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "TXA",
+		"AddressingMode": 0,
+		"Opcode": 138,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Index X to Accumulator"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 139,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "STY",
+		"AddressingMode": 4,
+		"Opcode": 140,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index Y in Memory"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 4,
+		"Opcode": 141,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "STX",
+		"AddressingMode": 4,
+		"Opcode": 142,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index X in Memory"
+	},
+	{
+		"Name": "SAX",
+		"AddressingMode": 4,
+		"Opcode": 143,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND X register with accumulator and store result in memory"
+	},
+	{
+		"Name": "BCC",
+		"AddressingMode": 2,
+		"Opcode": 144,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Carry Clear"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 12,
+		"Opcode": 145,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 146,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 147,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "STY",
+		"AddressingMode": 8,
+		"Opcode": 148,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index Y in Memory"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 8,
+		"Opcode": 149,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "STX",
+		"AddressingMode": 9,
+		"Opcode": 150,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Index X in Memory"
+	},
+	{
+		"Name": "SAX",
+		"AddressingMode": 9,
+		"Opcode": 151,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "AND X register with accumulator and store result in memory"
+	},
+	{
+		"Name": "TYA",
+		"AddressingMode": 0,
+		"Opcode": 152,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Index Y to Accumulator"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 6,
+		"Opcode": 153,
+		"Length": 3,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "TXS",
+		"AddressingMode": 0,
+		"Opcode": 154,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Index X to Stack Register"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 155,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 156,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "STA",
+		"AddressingMode": 5,
+		"Opcode": 157,
+		"Length": 3,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Store Accumulator in Memory"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 158,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 159,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "LDY",
+		"AddressingMode": 3,
+		"Opcode": 160,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index Y with Memory"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 11,
+		"Opcode": 161,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "LDX",
+		"AddressingMode": 3,
+		"Opcode": 162,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index X with Memory"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 11,
+		"Opcode": 163,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "LDY",
+		"AddressingMode": 7,
+		"Opcode": 164,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index Y with Memory"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 7,
+		"Opcode": 165,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "LDX",
+		"AddressingMode": 7,
+		"Opcode": 166,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index X with Memory"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 7,
+		"Opcode": 167,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "TAY",
+		"AddressingMode": 0,
+		"Opcode": 168,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Accumulator to Index Y"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 3,
+		"Opcode": 169,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "TAX",
+		"AddressingMode": 0,
+		"Opcode": 170,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Accumulator to Index X"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 171,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "LDY",
+		"AddressingMode": 4,
+		"Opcode": 172,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index Y with Memory"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 4,
+		"Opcode": 173,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "LDX",
+		"AddressingMode": 4,
+		"Opcode": 174,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index X with Memory"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 4,
+		"Opcode": 175,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "BCS",
+		"AddressingMode": 2,
+		"Opcode": 176,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Carry Set"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 12,
+		"Opcode": 177,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 178,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 12,
+		"Opcode": 179,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "LDY",
+		"AddressingMode": 8,
+		"Opcode": 180,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index Y with Memory"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 8,
+		"Opcode": 181,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "LDX",
+		"AddressingMode": 9,
+		"Opcode": 182,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index X with Memory"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 9,
+		"Opcode": 183,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "CLV",
+		"AddressingMode": 0,
+		"Opcode": 184,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "0"
+		},
+		"Summary": "Clear Overflow Flag"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 6,
+		"Opcode": 185,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "TSX",
+		"AddressingMode": 0,
+		"Opcode": 186,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Transfer Stack Pointer to Index X"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 187,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "LDY",
+		"AddressingMode": 5,
+		"Opcode": 188,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index Y with Memory"
+	},
+	{
+		"Name": "LDA",
+		"AddressingMode": 5,
+		"Opcode": 189,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Accumulator with Memory"
+	},
+	{
+		"Name": "LDX",
+		"AddressingMode": 6,
+		"Opcode": 190,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load Index X with Memory"
+	},
+	{
+		"Name": "LAX",
+		"AddressingMode": 6,
+		"Opcode": 191,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Load accumulator and X register with memory"
+	},
+	{
+		"Name": "CPY",
+		"AddressingMode": 3,
+		"Opcode": 192,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index Y"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 11,
+		"Opcode": 193,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 3,
+		"Opcode": 194,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 11,
+		"Opcode": 195,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "CPY",
+		"AddressingMode": 7,
+		"Opcode": 196,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index Y"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 7,
+		"Opcode": 197,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DEC",
+		"AddressingMode": 7,
+		"Opcode": 198,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Memory by One"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 7,
+		"Opcode": 199,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "INY",
+		"AddressingMode": 0,
+		"Opcode": 200,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Index Y by One"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 3,
+		"Opcode": 201,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DEX",
+		"AddressingMode": 0,
+		"Opcode": 202,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Index X by One"
+	},
+	{
+		"Name": "-",
+		"AddressingMode": 0,
+		"Opcode": 203,
+		"Length": 0,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "-"
+	},
+	{
+		"Name": "CPY",
+		"AddressingMode": 4,
+		"Opcode": 204,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index Y"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 4,
+		"Opcode": 205,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DEC",
+		"AddressingMode": 4,
+		"Opcode": 206,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Memory by One"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 4,
+		"Opcode": 207,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "BNE",
+		"AddressingMode": 2,
+		"Opcode": 208,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Result not Zero"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 12,
+		"Opcode": 209,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 210,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 12,
+		"Opcode": 211,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 212,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 8,
+		"Opcode": 213,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DEC",
+		"AddressingMode": 8,
+		"Opcode": 214,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Memory by One"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 8,
+		"Opcode": 215,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "CLD",
+		"AddressingMode": 0,
+		"Opcode": 216,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "0",
+			"V": "-"
+		},
+		"Summary": "Clear Decimal Mode"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 6,
+		"Opcode": 217,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 218,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 6,
+		"Opcode": 219,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 220,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "CMP",
+		"AddressingMode": 5,
+		"Opcode": 221,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory with Accumulator"
+	},
+	{
+		"Name": "DEC",
+		"AddressingMode": 5,
+		"Opcode": 222,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Decrement Memory by One"
+	},
+	{
+		"Name": "DCP",
+		"AddressingMode": 5,
+		"Opcode": 223,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "DEC memory then CMP result with A register"
+	},
+	{
+		"Name": "CPX",
+		"AddressingMode": 3,
+		"Opcode": 224,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index X"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 11,
+		"Opcode": 225,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 3,
+		"Opcode": 226,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 11,
+		"Opcode": 227,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC A register from result"
+	},
+	{
+		"Name": "CPX",
+		"AddressingMode": 7,
+		"Opcode": 228,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index X"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 7,
+		"Opcode": 229,
+		"Length": 2,
+		"Cycles": 3,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "INC",
+		"AddressingMode": 7,
+		"Opcode": 230,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Memory by One"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 7,
+		"Opcode": 231,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	},
+	{
+		"Name": "INX",
+		"AddressingMode": 0,
+		"Opcode": 232,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Index X by One"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 3,
+		"Opcode": 233,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 234,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 3,
+		"Opcode": 235,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "CPX",
+		"AddressingMode": 4,
+		"Opcode": 236,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Compare Memory and Index X"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 4,
+		"Opcode": 237,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "INC",
+		"AddressingMode": 4,
+		"Opcode": 238,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Memory by One"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 4,
+		"Opcode": 239,
+		"Length": 3,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	},
+	{
+		"Name": "BEQ",
+		"AddressingMode": 2,
+		"Opcode": 240,
+		"Length": 2,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": true,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Branch on Result Zero"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 12,
+		"Opcode": 241,
+		"Length": 2,
+		"Cycles": 5,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "STP",
+		"AddressingMode": 0,
+		"Opcode": 242,
+		"Length": 1,
+		"Cycles": 0,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Stop program counter (processor lock up)"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 12,
+		"Opcode": 243,
+		"Length": 2,
+		"Cycles": 8,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	},
+	{
+		"Name": "DOP",
+		"AddressingMode": 8,
+		"Opcode": 244,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 8,
+		"Opcode": 245,
+		"Length": 2,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "INC",
+		"AddressingMode": 8,
+		"Opcode": 246,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Memory by One"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 8,
+		"Opcode": 247,
+		"Length": 2,
+		"Cycles": 6,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	},
+	{
+		"Name": "SED",
+		"AddressingMode": 0,
+		"Opcode": 248,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "1",
+			"V": "-"
+		},
+		"Summary": "Set Decimal Flag"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 6,
+		"Opcode": 249,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "NOP",
+		"AddressingMode": 0,
+		"Opcode": 250,
+		"Length": 1,
+		"Cycles": 2,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 6,
+		"Opcode": 251,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	},
+	{
+		"Name": "TOP",
+		"AddressingMode": 5,
+		"Opcode": 252,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": true,
+		"Flags": {
+			"N": "-",
+			"Z": "-",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "No Operation"
+	},
+	{
+		"Name": "SBC",
+		"AddressingMode": 5,
+		"Opcode": 253,
+		"Length": 3,
+		"Cycles": 4,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": true,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "Subtract Memory from Accumulator with Borrow"
+	},
+	{
+		"Name": "INC",
+		"AddressingMode": 5,
+		"Opcode": 254,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": false,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "-",
+			"I": "-",
+			"D": "-",
+			"V": "-"
+		},
+		"Summary": "Increment Memory by One"
+	},
+	{
+		"Name": "ISC",
+		"AddressingMode": 5,
+		"Opcode": 255,
+		"Length": 3,
+		"Cycles": 7,
+		"ExtraCycleOnBranch": false,
+		"ExtraCycleOnPageCross": false,
+		"Illegal": true,
+		"Flags": {
+			"N": "N",
+			"Z": "Z",
+			"C": "C",
+			"I": "-",
+			"D": "-",
+			"V": "V"
+		},
+		"Summary": "INC memory then SBC result with A register"
+	}
+]
