@@ -1,5 +1,3 @@
-/* TotalJustice */
-
 #ifndef MOS6502_H
 #define MOS6502_H
 
