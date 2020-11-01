@@ -39,7 +39,7 @@ void MOS6502_write(void* user, unsigned short addr, unsigned char value) {
     }
 }
 
-void MOS6502_debug_on_cpu_fetch(struct MOS6502* cpu, void* user, unsigned char opcode) {
+void MOS6502_debug_post_fetch(struct MOS6502* cpu, void* user, unsigned char opcode) {
     UNUSED(user); UNUSED(opcode);
 
     #define REG_PC cpu->PC
@@ -79,7 +79,7 @@ void MOS6502_debug_on_cpu_fetch(struct MOS6502* cpu, void* user, unsigned char o
     if (cpu_cycles != ARR_CYC[cycles]) { OOF(); }
 }
 
-void MOS6502_debug_on_cpu_execute(struct MOS6502* cpu, void* user, unsigned char opcode) {
+void MOS6502_debug_post_execute(struct MOS6502* cpu, void* user, unsigned char opcode) {
     UNUSED(user);
     cpu_cycles += cpu->cycles;
     old_opcode = opcode;

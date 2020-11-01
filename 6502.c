@@ -270,7 +270,7 @@ void MOS6502_run(struct MOS6502* mos6502) {
     register const unsigned char opcode = read8(REG_PC);
     register unsigned short oprand;
     #ifdef MOS6502_DEBUG
-    MOS6502_debug_on_cpu_fetch(mos6502->userdata, mos6502, opcode);
+    MOS6502_debug_post_fetch(mos6502->userdata, mos6502, opcode);
     #endif
     REG_PC++;
 
@@ -520,6 +520,6 @@ void MOS6502_run(struct MOS6502* mos6502) {
 
     mos6502->cycles += CYCLE_PAIR_TABLE[opcode].c;
     #ifdef MOS6502_DEBUG
-    MOS6502_debug_on_cpu_execute(mos6502->userdata, mos6502, opcode);
+    MOS6502_debug_post_execute(mos6502->userdata, mos6502, opcode);
     #endif
 }
