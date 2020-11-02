@@ -47,7 +47,11 @@ void MOS6502_debug_post_fetch(struct MOS6502* cpu, void* user, unsigned char opc
     #define REG_X cpu->X
     #define REG_Y cpu->Y
     #define REG_SP cpu->S
+#ifdef C89
     #define REG_P cpu->P
+#else
+    #define REG_P cpu->status.P
+#endif
 
     #define OOF() \
         fprintf(stderr, "OLD_OP: 0x%02X\n", old_opcode); \
@@ -87,7 +91,11 @@ int main(int argc, char **argv) {
 
     nes.cpu.S = 0xFD;
     nes.cpu.PC = 0xC000;
+#ifdef C89
     nes.cpu.P |= 0x24;
+#else
+    nes.cpu.status.P |= 0x24;
+#endif
 
     for (cycles = 0; cycles < 8991; cycles++) {
         MOS6502_run(&nes.cpu);

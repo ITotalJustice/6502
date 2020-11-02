@@ -27,9 +27,10 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
 #define REG_X mos6502->X
 #define REG_Y mos6502->Y
 #define REG_SP mos6502->S
-#define REG_P mos6502->P
 
 /* status flags */
+#ifdef C89
+#define REG_P mos6502->P
 #define CARRY (!!(mos6502->P & 0x01))
 #define ZERO (!!(mos6502->P & 0x02))
 #define INTERRUPT (!!(mos6502->P & 0x04))
@@ -44,6 +45,23 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
 #define SET_BREAK(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x10
 #define SET_OVERFLOW(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x40
 #define SET_NEGATIVE(n) REG_P ^= (-(!!(n)) ^ REG_P) & 0x80
+#else
+#define REG_P mos6502->status.P
+#define CARRY mos6502->status._.C
+#define ZERO mos6502->status._.Z
+#define INTERRUPT mos6502->status._.I
+#define DECIMAL mos6502->status._.D
+#define BREAK mos6502->status._.B
+#define OVERFLOW mos6502->status._.V
+#define NEGATIVE mos6502->status._.N
+#define SET_CARRY(n) mos6502->status._.C = n
+#define SET_ZERO(n) mos6502->status._.Z = n
+#define SET_INTERRUPT(n) mos6502->status._.I = n
+#define SET_DECIMAL(n) mos6502->status._.D = n
+#define SET_BREAK(n) mos6502->status._.B = n
+#define SET_OVERFLOW(n) mos6502->status._.V = n
+#define SET_NEGATIVE(n) mos6502->status._.N = n
+#endif
 
 /* read / write wrappers */
 #define read8(addr) MOS6502_read(mos6502->userdata, addr)

@@ -9,7 +9,32 @@ struct MOS6502 {
     unsigned char X; /* index X */
     unsigned char Y; /* index Y */
     unsigned char S; /* stack pointer */
+#ifdef C89
     unsigned char P;
+#else
+    union {
+        struct {
+#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+            unsigned char C : 1; /* carry */
+            unsigned char Z : 1; /* zero */
+            unsigned char I : 1; /* interrupt */
+            unsigned char D : 1; /* decimal */
+            unsigned char B : 2; /* break */
+            unsigned char V : 1; /* overflow */
+            unsigned char N : 1; /* negative */
+#else
+            unsigned char N : 1; /* negative */
+            unsigned char V : 1; /* overflow */
+            unsigned char B : 2; /* break */
+            unsigned char D : 1; /* decimal */
+            unsigned char I : 1; /* interrupt */
+            unsigned char Z : 1; /* zero */
+            unsigned char C : 1; /* carry */
+#endif
+        }_;
+        unsigned char P; /* status */
+    } status;
+#endif
 };
 
 void MOS6502_run(struct MOS6502* mos6502);
