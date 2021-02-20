@@ -65,7 +65,11 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
 
 /* read / write wrappers */
 #define read8(addr) MOS6502_read(mos6502->userdata, addr)
-#define read16(addr) (read8(addr)) | (read8(addr + 1) << 8)
+static unsigned short __read16(struct MOS6502* mos6502, const unsigned short addr) { /* lo byte, then, hi byte << 8 */
+    const unsigned short value = read8(addr);
+    return value | read8(addr + 1) << 8;
+}
+#define read16(addr) __read16(mos6502, addr)
 #define write8(addr,value) MOS6502_write(mos6502->userdata, addr, value)
 #define write16(addr,value) write8(addr, value & 0xFF); write8(addr, (value >> 8) & 0xFF)
 
@@ -92,27 +96,38 @@ static const struct CyclePair CYCLE_PAIR_TABLE[0x100] = {
 #define ZPY() do { _ZPXY(REG_Y); } while(0)
 
 #define IND() do { \
-    oprand = read16(REG_PC); \
+    const unsigned short oprand_tmp = read16(REG_PC); \
     REG_PC += 2; \
-    oprand = (read8((oprand & 0xFF00) | ((oprand + 1) & 0xFF)) << 8) | read8(oprand); \
+    oprand = read8((oprand_tmp & 0xFF00) | ((oprand_tmp + 1) & 0xFF)) << 8; \
+    oprand |= read8(oprand_tmp); \
 } while(0)
 #define INDX() do { \
-    oprand = read8(REG_PC++); \
-    oprand = (read8((oprand + REG_X + 1) & 0xFF) << 8) | read8((oprand + REG_X) & 0xFF); \
+    const unsigned char oprand_tmp = read8(REG_PC++); \
+    oprand = read8((oprand_tmp + REG_X + 1) & 0xFF) << 8; \
+    oprand |= read8((oprand_tmp + REG_X) & 0xFF); \
 } while(0)
 #define INDY() do { \
-    oprand = read8(REG_PC++); \
-    oprand = ((read8((oprand + 1) & 0xFF) << 8) | read8(oprand)); \
+    const unsigned char oprand_tmp = read8(REG_PC++); \
+    oprand = read8((oprand_tmp + 1) & 0xFF) << 8; \
+    oprand |= read8(oprand_tmp); \
     PAGECROSS(oprand, REG_Y); \
-    oprand +=  REG_Y; \
+    oprand += REG_Y; \
 } while(0)
 
 #define SET_FLAGS_ZN(z,n) do { SET_ZERO((z) == 0); SET_NEGATIVE(((n) & 0x80) == 0x80); } while(0)
 
 static unsigned char _pop8(struct MOS6502* mos6502) { return read8(++REG_SP | 0x100); }
-static unsigned short _pop16(struct MOS6502* mos6502) { return (_pop8(mos6502)) | (_pop8(mos6502) << 8); }
+static unsigned short _pop16(struct MOS6502* mos6502) { /* lo byte, then, hi byte << 8 */
+    const unsigned short value = _pop8(mos6502);
+    return value | (_pop8(mos6502) << 8);
+}
+
 static void _push8(struct MOS6502* mos6502, unsigned char v) { write8(REG_SP-- | 0x100, v); }
-static void _push16(struct MOS6502* mos6502, unsigned short v) { _push8(mos6502, (v >> 8) & 0xFF); _push8(mos6502, v & 0xFF); }
+static void _push16(struct MOS6502* mos6502, unsigned short v) { /* hi byte >> 8, then, lo byte */
+    _push8(mos6502, (v >> 8) & 0xFF);
+    _push8(mos6502, v & 0xFF);
+}
+
 #define POP8() _pop8(mos6502)
 #define POP16() _pop16(mos6502)
 #define PUSH8(value)_push8(mos6502, value)
