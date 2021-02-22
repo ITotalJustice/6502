@@ -207,8 +207,45 @@ static void _push16(struct MOS6502* mos6502, unsigned short v) { /* hi byte >> 8
     SET_OVERFLOW(((old_a ^ REG_A) & (oprand ^ REG_A) & 0x80) > 0); \
     SET_FLAGS_ZN(REG_A, REG_A); \
 } while(0)
+
+#ifndef MOS6502_DISABLE_DECIMAL_MODE
+#define ADC() do { \
+    oprand = read8(oprand); \
+    if (DECIMAL) { \
+    unsigned short a; \
+    unsigned char al = (REG_A & 0x0F) + (oprand & 0x0F) + CARRY; \
+        if (al > 0x09) al = ((al + 0x06) & 0x0F) + 0x10; \
+        a = (REG_A & 0xF0) + (oprand & 0xF0) + al; \
+        SET_OVERFLOW(((REG_A ^ a) & (oprand ^ a) & 0x80) > 0); \
+        SET_NEGATIVE(0x80 == (a & 0x80)); \
+        SET_ZERO(0 == ((REG_A + oprand + CARRY) & 0xff)); \
+        if (a >= 0xA0) a += 0x60; \
+        SET_CARRY(a > 0xFF); \
+        REG_A = a; \
+    } else ADCSBC(); \
+} while(0)
+
+#define SBC() do { \
+    oprand = read8(oprand) ^ 0xFF; \
+    if (DECIMAL) { \
+        short a, al; \
+        a = REG_A + oprand + CARRY; \
+        SET_OVERFLOW(((REG_A ^ a) & (oprand ^ a) & 0x80) > 0); \
+        SET_FLAGS_ZN(a & 0xFF, a & 0xFF); \
+        oprand ^= 0xFF; \
+        al = (REG_A & 0x0F) - (oprand & 0x0F) + CARRY - 1; \
+        SET_CARRY(a > 0xFF); \
+        if (al & 0x80) al = ((al - 0x06) & 0x0F) - 0x10; \
+        a = (REG_A & 0xF0) - (oprand & 0xF0) + al; \
+        if (a < 0) a -= 0x60; \
+        REG_A = a; \
+    } else ADCSBC(); \
+} while(0)
+#else /* MOS6502_DISABLE_DECIMAL_MODE */
 #define ADC() do { oprand = read8(oprand); ADCSBC(); } while(0)
 #define SBC() do { oprand = read8(oprand) ^ 0xFF; ADCSBC(); } while(0)
+#endif /* MOS6502_DISABLE_DECIMAL_MODE */
+
 
 #define AND() do { REG_A &= read8(oprand); SET_FLAGS_ZN(REG_A, REG_A); } while(0)
 #define ORA() do { REG_A |= read8(oprand); SET_FLAGS_ZN(REG_A, REG_A); } while(0)

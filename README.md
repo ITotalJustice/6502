@@ -5,6 +5,7 @@ unfinished 6502 implementation written in c89 with zero dependencies (no include
 ## working
 
 - good enough implementation to pass nestest
+- decimal mode arithmetic (disabled by defining `MOS6502_DISABLE_DECIMAL_MODE`)
 
 ## not working
 
